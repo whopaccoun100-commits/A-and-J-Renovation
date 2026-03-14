@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&J Renovation Construction Ltd | South Wales Premier Renovations</title>
+    <meta name="description"
+        content="Award-winning residential and commercial renovations in South Wales. Bespoke construction, extensions, and luxury kitchens by A&J Renovation Construction Ltd.">
+    <meta name="keywords"
+        content="Renovations South Wales, Home Extensions Cardiff, Luxury Kitchens Swansea, Construction Newport, Bespoke Builders Penarth">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ajrenovations.co.uk/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ajrenovations.co.uk/">
+    <meta property="og:title" content="A&J Renovation Construction Ltd | South Wales Premier Renovations">
+    <meta property="og:description"
+        content="Award-winning residential and commercial renovations in South Wales. Bespoke construction, extensions, and luxury kitchens.">
+    <meta property="og:image" content="https://ajrenovations.co.uk/images/logo.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ajrenovations.co.uk/">
+    <meta property="twitter:title" content="A&J Renovation Construction Ltd | South Wales Premier Renovations">
+    <meta property="twitter:description"
+        content="Award-winning residential and commercial renovations in South Wales. Bespoke construction, extensions, and luxury kitchens.">
+    <meta property="twitter:image" content="https://ajrenovations.co.uk/images/logo.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.jpg">
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "A&J Renovation Construction Ltd",
+      "image": "https://ajrenovations.co.uk/images/logo.jpg",
+      "@id": "",
+      "url": "https://ajrenovations.co.uk/",
+      "telephone": "+441234567890",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Swansea",
+        "addressLocality": "Swansea",
+        "postalCode": "SA17 BY",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.6214,
+        "longitude": -3.9436
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/ajrenovations",
+        "https://www.instagram.com/ajrenovations"
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Spectral', 'serif'],
+                    },
+                    colors: {
+                        coffee: {
+                            teal: '#0F6480',
+                            beige: '#EEE9DC',
+                            dark: '#1C1C1C',
+                            white: '#FFFFFF',
+                        }
+                    },
+                    maxWidth: {
+                        'desktop': '1200px',
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #EEE9DC;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0F6480;
+            border: 2px solid #EEE9DC;
+            border-radius: 10px;
+        }
+
+        .bg-grain::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Lightbox Overlay */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 100, 128, 0.95);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Carousel Transition */
+        .testimonial-slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Selection Styling */
+        ::selection {
+            background: #0F6480;
+            color: #EEE9DC;
+        }
+
+        /* Input Focus Effects */
+        input:focus,
+        textarea:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(15, 100, 128, 0.2);
+        }
+
+        /* Button Shimmer Effect */
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-shimmer:hover::after {
+            left: 100%;
+        }
+
+        /* Floating Label - CSS Only */
+        .floating-input:placeholder-shown+label {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .floating-input:not(:placeholder-shown)+label,
+        .floating-input:focus+label {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #0F6480;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-coffee-teal bg-coffee-beige">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <nav class="bg-coffee-teal text-white sticky top-0 z-50">
+        <div class="max-w-desktop mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div
+                    class="h-14 w-14 rounded-full overflow-hidden border-2 border-coffee-beige bg-coffee-beige flex items-center justify-center">
+                    <img src="images/logo/logo.jpg" alt="A&J Logo"
+                        class="w-full h-full object-cover opacity-90 mix-blend-multiply">
+                </div>
+                <div class="leading-none hidden sm:block">
+                    <span class="block font-serif font-bold text-xl tracking-wide">A&J RENOVATION</span>
+                    <span class="block text-xs text-coffee-beige uppercase tracking-[0.2em] opacity-80">Construction
+                        Ltd</span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex gap-8 font-light tracking-wide text-sm">
+                <a href="index.html"
+                    class="text-coffee-beige font-medium relative border-b border-coffee-beige">HOME</a>
+                <a href="about.html" class="hover:text-coffee-beige/80 transition relative">ABOUT</a>
+                <a href="services.html" class="hover:text-coffee-beige/80 transition relative">SERVICES</a>
+                <a href="gallery.html" class="hover:text-coffee-beige/80 transition relative">GALLERY</a>
+                <a href="contact.html" class="hover:text-coffee-beige/80 transition relative">CONTACT</a>
+            </div>
+
+            <a href="contact.html"
+                class="hidden md:block border border-white px-6 py-2 text-sm uppercase tracking-widest hover:bg-white hover:text-coffee-teal transition duration-300">
+                Get a Free Quote
+            </a>
+
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none"
+                aria-label="Toggle Navigation Menu"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-coffee-teal border-t border-white/10 p-6">
+            <div class="flex flex-col gap-6 text-center font-serif text-xl">
+                <a href="index.html" class="text-coffee-beige">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <header
+            class="relative bg-coffee-teal text-coffee-beige min-h-[85vh] flex items-center justify-center overflow-hidden bg-grain">
+            <div class="absolute inset-0 z-0">
+                <img src="images/hero/hero-bg.jpg" alt="Luxury kitchen showcase background"
+                    class="w-full h-full object-cover opacity-20 mix-blend-overlay">
+            </div>
+
+            <div class="relative z-10 max-w-4xl mx-auto px-6 text-center animate-fade-up">
+                <p class="font-sans text-sm uppercase tracking-[0.3em] mb-6 opacity-80">Est. 2001 &bull; South Wales</p>
+                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-none mb-8 italic">
+                    Vision Got <br><span class="not-italic">Larger</span>
+                </h1>
+                <p class="font-sans font-light text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed opacity-90">
+                    The premier choice for large-scale residential and commercial renovations across South Wales. We
+                    build
+                    with precision, passion, and purpose.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="services.html"
+                        class="bg-coffee-beige text-coffee-teal px-10 py-4 font-sans text-sm tracking-widest uppercase hover:bg-white transition duration-300 min-w-[180px]">
+                        Our Services
+                    </a>
+                    <a href="contact.html"
+                        class="border border-coffee-beige text-coffee-beige px-10 py-4 font-sans text-sm tracking-widest uppercase hover:bg-coffee-beige hover:text-coffee-teal transition duration-300 min-w-[180px]">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Intro Text Section -->
+        <section class="py-24 md:py-32 px-6 bg-coffee-beige text-coffee-teal text-center">
+            <div class="max-w-3xl mx-auto animate-fade-up" style="animation-delay: 0.2s;">
+                <i class="fas fa-home text-4xl mb-8 opacity-50"></i>
+                <h2 class="font-serif text-4xl md:text-5xl mb-8 leading-tight">
+                    "We transform spaces into living works of art, blending 25 years of heritage with modern sustainable
+                    practices."
+                </h2>
+                <div class="h-[1px] w-24 bg-coffee-teal/30 mx-auto my-8"></div>
+                <p class="font-sans font-light text-lg leading-relaxed mb-12">
+                    A trusted name in South Wales for over two decades. We specialize in transforming residential spaces
+                    through bespoke construction and high-end renovations.
+                </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 font-serif">
+                    <div><span class="block text-4xl mb-2">25+</span><span
+                            class="text-xs font-sans uppercase tracking-widest opacity-70">Years</span></div>
+                    <div><span class="block text-4xl mb-2">100%</span><span
+                            class="text-xs font-sans uppercase tracking-widest opacity-70">Satisfaction</span></div>
+                    <div><span class="block text-4xl mb-2">130+</span><span
+                            class="text-xs font-sans uppercase tracking-widest opacity-70">Projects</span></div>
+                    <div><span class="block text-4xl mb-2">15+</span><span
+                            class="text-xs font-sans uppercase tracking-widest opacity-70">Areas</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="bg-white py-24 px-6">
+            <div class="max-w-desktop mx-auto">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 border-b border-coffee-teal/10 pb-8 text-center md:text-left">
+                    <div>
+                        <span class="font-sans text-xs uppercase tracking-[0.2em] text-coffee-teal/60 mb-2 block">What
+                            We
+                            Do</span>
+                        <h2 class="font-serif text-4xl md:text-5xl text-coffee-teal">Our Services</h2>
+                    </div>
+                    <a href="contact.html"
+                        class="hidden md:inline-block font-sans text-sm font-medium border-b border-coffee-teal pb-1 hover:opacity-70 transition">START
+                        A PROJECT</a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
+                    <!-- Service 1 -->
+                    <div class="group cursor-pointer">
+                        <div class="aspect-[4/5] bg-gray-100 mb-6 overflow-hidden relative">
+                            <img src="images/gallery/gallery-3.jpg" alt="Bespoke interior renovation in Cardiff"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                                loading="lazy">
+                        </div>
+                        <h3 class="font-serif text-2xl mb-3 text-coffee-teal">Bespoke Renovations</h3>
+                        <p class="font-sans font-light text-sm leading-relaxed text-coffee-teal/80">
+                            Complete interior and exterior transformations across South Wales, breathing new life into
+                            structures.
+                        </p>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="group cursor-pointer">
+                        <div class="aspect-[4/5] bg-gray-100 mb-6 overflow-hidden relative">
+                            <img src="images/gallery/gallery-7.jpg" alt="Modern home extension and brickwork"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                                loading="lazy">
+                        </div>
+                        <h3 class="font-serif text-2xl mb-3 text-coffee-teal">Extensions</h3>
+                        <p class="font-sans font-light text-sm leading-relaxed text-coffee-teal/80">
+                            From contemporary glass extensions to traditional brickwork, expanding your living space.
+                        </p>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="group cursor-pointer">
+                        <div class="aspect-[4/5] bg-gray-100 mb-6 overflow-hidden relative">
+                            <img src="images/gallery/gallery-4.jpg" alt="Luxury designer kitchen installation"
+                                class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                                loading="lazy">
+                        </div>
+                        <h3 class="font-serif text-2xl mb-3 text-coffee-teal">Luxury Kitchens</h3>
+                        <p class="font-sans font-light text-sm leading-relaxed text-coffee-teal/80">
+                            The heart of the home, refined. High-specification designs and seamless installation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sustainability Section -->
+        <section class="bg-coffee-dark text-coffee-beige py-24 px-6 overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <filter id="noiseFilterSection">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch" />
+                    </filter>
+                    <rect width="100%" height="100%" filter="url(#noiseFilterSection)" />
+                </svg>
+            </div>
+            <div class="max-w-desktop mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="animate-fade-up">
+                        <span
+                            class="font-sans text-xs uppercase tracking-[0.2em] opacity-60 mb-4 block">Sustainability</span>
+                        <h2 class="font-serif text-4xl md:text-5xl mb-8 leading-tight italic">Committed to South Wales'
+                            <br><span class="not-italic">Future</span>
+                        </h2>
+                        <p class="font-sans font-light text-lg leading-relaxed mb-8 opacity-80">
+                            We are committed to reducing our environmental footprint in South Wales by sourcing premium,
+                            sustainable materials and implementing efficient waste management practices.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div
+                                class="flex items-center gap-4 border border-white/10 p-4 rounded-sm hover:bg-white/5 transition duration-500">
+                                <i class="fas fa-recycle text-xl opacity-60"></i>
+                                <span class="font-sans font-light text-sm uppercase tracking-widest">Sustainable
+                                    Sourcing</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 border border-white/10 p-4 rounded-sm hover:bg-white/5 transition duration-500">
+                                <i class="fas fa-clock text-xl opacity-60"></i>
+                                <span class="font-sans font-light text-sm uppercase tracking-widest">Project On
+                                    Time</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 border border-white/10 p-4 rounded-sm hover:bg-white/5 transition duration-500">
+                                <i class="fas fa-desktop text-xl opacity-60"></i>
+                                <span class="font-sans font-light text-sm uppercase tracking-widest">Modern Tech</span>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 border border-white/10 p-4 rounded-sm hover:bg-white/5 transition duration-500">
+                                <i class="fas fa-pencil-ruler text-xl opacity-60"></i>
+                                <span class="font-sans font-light text-sm uppercase tracking-widest">Latest
+                                    Designs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative h-[500px] animate-fade-up" style="animation-delay: 0.2s;">
+                        <img src="images/gallery/gallery-4.jpg" alt="Sustainable construction project South Wales"
+                            class="w-full h-full object-cover shadow-2xl rounded-sm opacity-80" loading="lazy">
+                        <div class="absolute inset-0 border border-white/10 m-4 pointer-events-none"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Works / Parallax -->
+        <section class="relative py-32 bg-coffee-teal text-coffee-beige bg-fixed bg-cover bg-center"
+            style="background-image: url('images/hero/hero-bg.jpg');">
+            <div class="absolute inset-0 bg-coffee-teal/90"></div>
+            <div class="relative z-10 max-w-desktop mx-auto px-6 flex flex-col items-center text-center">
+                <span class="font-sans text-xs uppercase tracking-[0.2em] mb-4">Portfolio</span>
+                <h2 class="font-serif text-5xl md:text-6xl mb-12">Latest Transformations</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+                    <div class="bg-coffee-beige text-coffee-teal p-8 md:p-12 text-left hover:-translate-y-2 transition duration-500 shadow-xl cursor-pointer lightbox-trigger"
+                        data-img="images/gallery/gallery-3.jpg">
+                        <p class="font-serif text-3xl mb-4 italic">The Cardiff Villa</p>
+                        <p class="font-sans font-light mb-6">A complete restoration of a 1920s property in Cardiff,
+                            South
+                            Wales, preserving heritage while injecting modern luxury.</p>
+                        <span class="uppercase text-xs tracking-widest border-b border-coffee-teal pb-1">View Full
+                            Screen</span>
+                    </div>
+                    <div class="bg-coffee-dark text-coffee-beige p-8 md:p-12 text-left hover:-translate-y-2 transition duration-500 shadow-xl cursor-pointer lightbox-trigger"
+                        data-img="images/gallery/gallery-7.jpg">
+                        <p class="font-serif text-3xl mb-4 italic">Swansea Loft</p>
+                        <p class="font-sans font-light mb-6">Industrial chic conversion in the heart of Swansea. Open
+                            plan
+                            living at its finest with high-end finishes.</p>
+                        <span class="uppercase text-xs tracking-widest border-b border-coffee-beige pb-1">View Full
+                            Screen</span>
+                    </div>
+                    <div class="bg-coffee-beige text-coffee-teal p-8 md:p-12 text-left hover:-translate-y-2 transition duration-500 shadow-xl cursor-pointer lightbox-trigger"
+                        data-img="images/gallery/gallery-4.jpg">
+                        <p class="font-serif text-3xl mb-4 italic">Newport Luxury</p>
+                        <p class="font-sans font-light mb-6">A modern kitchen and bathroom transformation in Newport,
+                            enhancing value and lifestyle through design.</p>
+                        <span class="uppercase text-xs tracking-widest border-b border-coffee-teal pb-1">View Full
+                            Screen</span>
+                    </div>
+                </div>
+
+                <a href="gallery.html"
+                    class="mt-16 border border-coffee-beige text-coffee-beige px-8 py-3 uppercase text-sm tracking-widest hover:bg-coffee-beige hover:text-coffee-teal transition">View
+                    Full Gallery</a>
+            </div>
+        </section>
+
+        <!-- Testimonials Carousel -->
+        <section class="py-24 px-6 bg-coffee-beige">
+            <div class="max-w-4xl mx-auto text-center relative" id="testimonial-carousel">
+                <i class="fas fa-quote-left text-4xl text-coffee-teal/20 mb-8"></i>
+
+                <!-- Slide 1 -->
+                <div class="testimonial-slide active">
+                    <h2 class="font-serif text-2xl md:text-4xl text-coffee-teal px-4 leading-tight mb-8">
+                        "A&J Renovations made our kitchen remodel stress-free. On time, on budget, and stunning results.
+                        Dream kitchen achieved — thank you!"
+                    </h2>
+                    <div class="flex items-center justify-center gap-4">
+                        <div class="w-8 h-[1px] bg-coffee-teal/30"></div>
+                        <span class="font-sans uppercase text-xs tracking-widest text-coffee-teal">Alice Howard,
+                            Engineering
+                            Manager</span>
+                        <div class="w-8 h-[1px] bg-coffee-teal/30"></div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="testimonial-slide">
+                    <h2 class="font-serif text-2xl md:text-4xl text-coffee-teal px-4 leading-tight mb-8">
+                        "A&J renovations made our bathroom safe and beautiful for my mom. Kind crew, tidy site, and
+                        listened
+                        to our needs. Huge thanks!"
+                    </h2>
+                    <div class="flex items-center justify-center gap-4">
+                        <div class="w-8 h-[1px] bg-coffee-teal/30"></div>
+                        <span class="font-sans uppercase text-xs tracking-widest text-coffee-teal">Nathan Marshall,
+                            Consultant</span>
+                        <div class="w-8 h-[1px] bg-coffee-teal/30"></div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="testimonial-slide">
+                    <h2 class="font-serif text-2xl md:text-4xl text-coffee-teal px-4 leading-tight mb-8">
+                        "A&J renovations turned our basement into a quiet office in 6 weeks — fast, clean, and
+                        professional.
+                        Daily updates, great work."
+                    </h2>
+                    <div class="flex items-center justify-center gap-4">
+                        <div class="w-8 h-[1px] bg-coffee-teal/30"></div>
+                        <span class="font-sans uppercase text-xs tracking-widest text-coffee-teal">Ema Romero, Graphic
+                            Designer</span>
+                        <div class="w-8 h-[1px] bg-coffee-teal/30"></div>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="testimonial-slide">
+                    <h2 class="font-serif text-2xl md:text-4xl text-coffee-teal px-4 leading-tight mb-8">
+                        "Closed for minimal downtime, worked after hours, and nailed the layout. More foot traffic
+                        already —
+                        fantastic job."
+                    </h2>
+                    <div class="flex items-center justify-center gap-4">
+                        <div class="w-8 h-[1px] bg-coffee-teal/30"></div>
+                        <span class="font-sans uppercase text-xs tracking-widest text-coffee-teal">Ann Smith, Business
+                            Owner</span>
+                        <div class="w-8 h-[1px] bg-coffee-teal/30"></div>
+                    </div>
+                </div>
+
+                <!-- Dots Control -->
+                <div class="flex justify-center gap-3 mt-10">
+                    <button
+                        class="w-2 h-2 rounded-full bg-coffee-teal opacity-100 hover:opacity-100 transition dot-control"
+                        onclick="showSlide(0)"></button>
+                    <button
+                        class="w-2 h-2 rounded-full bg-coffee-teal opacity-30 hover:opacity-100 transition dot-control"
+                        onclick="showSlide(1)"></button>
+                    <button
+                        class="w-2 h-2 rounded-full bg-coffee-teal opacity-30 hover:opacity-100 transition dot-control"
+                        onclick="showSlide(2)"></button>
+                    <button
+                        class="w-2 h-2 rounded-full bg-coffee-teal opacity-30 hover:opacity-100 transition dot-control"
+                        onclick="showSlide(3)"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Quote Form -->
+        </section>
+
+        <!-- FAQ Section with Schema -->
+        <section class="py-24 px-6 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="font-sans text-xs uppercase tracking-[0.2em] text-coffee-teal/60 mb-2 block">Common
+                        Questions</span>
+                    <h2 class="font-serif text-4xl md:text-5xl text-coffee-teal italic">Insights</h2>
+                </div>
+                <div class="space-y-4">
+                    <script type="application/ld+json">
+                    {
+                      "@context": "https://schema.org",
+                      "@type": "FAQPage",
+                      "mainEntity": [{
+                        "@type": "Question",
+                        "name": "Do you manage planning and permits in South Wales?",
+                        "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Yes. We handle everything from architectural drawings to local South Wales building regulations, providing a seamless experience from conception to completion."
+                        }
+                      }, {
+                        "@type": "Question",
+                        "name": "Which areas of South Wales do you cover?",
+                        "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "We proudly serve Cardiff, Newport, Swansea, Penarth, Bridgend, and the surrounding South Wales valleys."
+                        }
+                      }, {
+                        "@type": "Question",
+                        "name": "Do you provide free project estimates?",
+                        "acceptedAnswer": {
+                          "@type": "Answer",
+                          "text": "Absolutely. We offer comprehensive consultations and detailed estimates for all potential projects across our coverage areas."
+                        }
+                      }]
+                    }
+                    </script>
+                    <details class="group border-b border-coffee-teal/10 pb-4">
+                        <summary
+                            class="flex justify-between items-center font-serif text-xl cursor-pointer list-none py-4 marker:content-none transition duration-300 hover:text-coffee-teal/70">
+                            Do you manage planning and permits in South Wales?
+                            <span class="transform group-open:rotate-45 transition duration-300 text-2xl"
+                                aria-hidden="true">+</span>
+                        </summary>
+                        <p class="font-sans font-light text-coffee-teal/80 leading-relaxed pt-2 pb-6">
+                            Yes. We handle everything from architectural drawings to local South Wales building
+                            regulations,
+                            providing a seamless experience from conception to completion.
+                        </p>
+                    </details>
+                    <details class="group border-b border-coffee-teal/10 pb-4">
+                        <summary
+                            class="flex justify-between items-center font-serif text-xl cursor-pointer list-none py-4 marker:content-none transition duration-300 hover:text-coffee-teal/70">
+                            Which areas of South Wales do you cover?
+                            <span class="transform group-open:rotate-45 transition duration-300 text-2xl"
+                                aria-hidden="true">+</span>
+                        </summary>
+                        <p class="font-sans font-light text-coffee-teal/80 leading-relaxed pt-2 pb-6">
+                            We proudly serve Cardiff, Newport, Swansea, Penarth, Bridgend, and the surrounding South
+                            Wales
+                            valleys.
+                        </p>
+                    </details>
+                    <details class="group border-b border-coffee-teal/10 pb-4">
+                        <summary
+                            class="flex justify-between items-center font-serif text-xl cursor-pointer list-none py-4 marker:content-none transition duration-300 hover:text-coffee-teal/70">
+                            Do you provide free project estimates?
+                            <span class="transform group-open:rotate-45 transition duration-300 text-2xl"
+                                aria-hidden="true">+</span>
+                        </summary>
+                        <p class="font-sans font-light text-coffee-teal/80 leading-relaxed pt-2 pb-6">
+                            Absolutely. We offer comprehensive consultations and detailed estimates for all potential
+                            projects across our coverage areas.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-coffee-dark text-coffee-beige py-20 px-6 border-t border-white/10">
+        <div class="max-w-desktop mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                <span class="font-serif text-2xl block mb-6">A&J RENOVATION</span>
+                <div class="flex gap-4 opacity-60">
+                    <a href="#" class="hover:text-white transition" aria-label="Follow us on Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition" aria-label="Like us on Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition" aria-label="Connect with us on LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-12 font-sans font-light text-sm">
+                <div class="flex flex-col gap-3">
+                    <span class="font-medium mb-2 uppercase tracking-widest opacity-50">Menu</span>
+                    <a href="index.html" class="hover:underline">Home</a>
+                    <a href="about.html" class="hover:underline">About</a>
+                    <a href="services.html" class="hover:underline">Services</a>
+                    <a href="gallery.html" class="hover:underline">Gallery</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <span class="font-medium mb-2 uppercase tracking-widest opacity-50">Legal</span>
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-desktop mx-auto mt-20 pt-8 border-t border-white/10 text-center md:text-left text-xs opacity-40 font-sans uppercase tracking-widest">
+            &copy; 2026 A&J Renovation Construction Ltd.
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Full Screen Image">
+    </div>
+
+    <script>
+        // Mobile Menu
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Testimonial Carousel
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.dot-control');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.replace('opacity-100', 'opacity-30');
+
+            currentSlide = n;
+            if (currentSlide >= slides.length) currentSlide = 0;
+
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.replace('opacity-30', 'opacity-100');
+        }
+
+        // Auto advance slide every 5 seconds
+        setInterval(() => {
+            showSlide((currentSlide + 1) % slides.length);
+        }, 5000);
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const triggers = document.querySelectorAll('.lightbox-trigger');
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent link default
+                const src = trigger.dataset.img || trigger.getAttribute('src') || trigger.querySelector('img').getAttribute('src');
+                lightboxImg.src = src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+    </script>
+</body>
+
+</html>

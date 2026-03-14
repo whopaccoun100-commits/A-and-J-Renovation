@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio | Luxury Renovation Gallery South Wales</title>
+    <meta name="description"
+        content="View our portfolio of luxury home renovations, extensions, and kitchen designs across South Wales. High-quality craftsmanship in Cardiff, Swansea, and Newport.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ajrenovations.co.uk/gallery.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ajrenovations.co.uk/gallery.html">
+    <meta property="og:title" content="Our Portfolio | Luxury Renovation Gallery South Wales">
+    <meta property="og:description"
+        content="View our portfolio of luxury home renovations, extensions, and kitchen designs across South Wales.">
+    <meta property="og:image" content="https://ajrenovations.co.uk/images/logo.jpg">
+
+    <!-- Schema.org Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ajrenovations.co.uk/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Gallery",
+        "item": "https://ajrenovations.co.uk/gallery.html"
+      }]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Spectral', 'serif'],
+                    },
+                    colors: {
+                        coffee: {
+                            teal: '#0F6480',
+                            beige: '#EEE9DC',
+                            dark: '#1C1C1C',
+                            white: '#FFFFFF',
+                        }
+                    },
+                    maxWidth: {
+                        'desktop': '1200px',
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #EEE9DC;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0F6480;
+            border: 2px solid #EEE9DC;
+            border-radius: 10px;
+        }
+
+        .bg-grain::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Lightbox Overlay */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 100, 128, 0.95);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Common CSS Effects */
+        ::selection {
+            background: #0F6480;
+            color: #EEE9DC;
+        }
+
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-shimmer:hover::after {
+            left: 100%;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #0F6480;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-coffee-teal bg-coffee-beige flex flex-col min-h-screen">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <nav class="bg-coffee-teal text-white sticky top-0 z-50">
+        <div class="max-w-desktop mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div
+                    class="h-14 w-14 rounded-full overflow-hidden border-2 border-coffee-beige bg-coffee-beige flex items-center justify-center">
+                    <img src="images/logo/logo.jpg" alt="A&J Logo"
+                        class="w-full h-full object-cover opacity-90 mix-blend-multiply">
+                </div>
+                <div class="leading-none hidden sm:block">
+                    <span class="block font-serif font-bold text-xl tracking-wide">A&J RENOVATION</span>
+                    <span class="block text-xs text-coffee-beige uppercase tracking-[0.2em] opacity-80">Construction
+                        Ltd</span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex gap-8 font-light tracking-wide text-sm">
+                <a href="index.html" class="hover:text-coffee-beige/80 transition relative">HOME</a>
+                <a href="about.html" class="hover:text-coffee-beige/80 transition relative">ABOUT</a>
+                <a href="services.html" class="hover:text-coffee-beige/80 transition relative">SERVICES</a>
+                <a href="gallery.html"
+                    class="text-coffee-beige font-medium relative border-b border-coffee-beige">GALLERY</a>
+                <a href="contact.html" class="hover:text-coffee-beige/80 transition relative">CONTACT</a>
+            </div>
+
+            <a href="contact.html"
+                class="hidden md:block border border-white px-6 py-2 text-sm uppercase tracking-widest hover:bg-white hover:text-coffee-teal transition duration-300">
+                Get a Free Quote
+            </a>
+
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none"
+                aria-label="Toggle Navigation Menu"><i class="fas fa-bars"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-coffee-teal border-t border-white/10 p-6">
+            <div class="flex flex-col gap-6 text-center font-serif text-xl">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html" class="text-coffee-beige">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="flex-grow">
+        <!-- Page Header -->
+        <header class="relative bg-coffee-teal text-coffee-beige py-32 text-center bg-grain">
+            <div class="absolute inset-0 z-0">
+                <img src="images/hero/hero-bg.jpg" alt="Gallery showcase background"
+                    class="w-full h-full object-cover opacity-10">
+            </div>
+            <div class="relative z-10 animate-fade-up">
+                <h1 class="font-serif text-6xl md:text-7xl mb-4 italic">Our Portfolio</h1>
+                <p class="font-sans text-sm uppercase tracking-[0.3em] opacity-80">A Collection of Our Finest Work</p>
+            </div>
+        </header>
+
+        <section class="py-24 px-6 bg-coffee-beige">
+            <div class="max-w-desktop mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="group relative aspect-square overflow-hidden cursor-pointer shadow-lg animate-fade-up lightbox-trigger"
+                        style="animation-delay: 0.1s;">
+                        <img src="images/gallery/gallery-1.jpg" alt="Modern open-plan kitchen renovation"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 transform group-hover:scale-110"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-coffee-teal/0 group-hover:bg-coffee-teal/40 transition duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <span
+                                class="bg-coffee-beige text-coffee-teal px-6 py-2 font-sans text-xs uppercase tracking-widest">View
+                                Full Screen</span>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="group relative aspect-square overflow-hidden cursor-pointer shadow-lg animate-fade-up lightbox-trigger"
+                        style="animation-delay: 0.2s;">
+                        <img src="images/gallery/gallery-2.jpg" alt="High-end bathroom renovation project"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 transform group-hover:scale-110"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-coffee-teal/0 group-hover:bg-coffee-teal/40 transition duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <span
+                                class="bg-coffee-beige text-coffee-teal px-6 py-2 font-sans text-xs uppercase tracking-widest">View
+                                Full Screen</span>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="group relative aspect-square overflow-hidden cursor-pointer shadow-lg animate-fade-up lightbox-trigger"
+                        style="animation-delay: 0.3s;">
+                        <img src="images/gallery/gallery-3.jpg" alt="Bespoke luxury living room transformation"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 transform group-hover:scale-110"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-coffee-teal/0 group-hover:bg-coffee-teal/40 transition duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <span
+                                class="bg-coffee-beige text-coffee-teal px-6 py-2 font-sans text-xs uppercase tracking-widest">View
+                                Full Screen</span>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="group relative aspect-square overflow-hidden cursor-pointer shadow-lg animate-fade-up lightbox-trigger"
+                        style="animation-delay: 0.4s;">
+                        <img src="images/gallery/gallery-4.jpg" alt="Contemporary home extension South Wales"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 transform group-hover:scale-110"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-coffee-teal/0 group-hover:bg-coffee-teal/40 transition duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <span
+                                class="bg-coffee-beige text-coffee-teal px-6 py-2 font-sans text-xs uppercase tracking-widest">View
+                                Full Screen</span>
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="group relative aspect-square overflow-hidden cursor-pointer shadow-lg animate-fade-up lightbox-trigger"
+                        style="animation-delay: 0.5s;">
+                        <img src="images/gallery/gallery-5.jpg" alt="Architectural design project showcase"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 transform group-hover:scale-110"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-coffee-teal/0 group-hover:bg-coffee-teal/40 transition duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <span
+                                class="bg-coffee-beige text-coffee-teal px-6 py-2 font-sans text-xs uppercase tracking-widest">View
+                                Full Screen</span>
+                        </div>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="group relative aspect-square overflow-hidden cursor-pointer shadow-lg animate-fade-up lightbox-trigger"
+                        style="animation-delay: 0.6s;">
+                        <img src="images/gallery/gallery-6.jpg" alt="Professional project management on-site"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 transform group-hover:scale-110"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-coffee-teal/0 group-hover:bg-coffee-teal/40 transition duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <span
+                                class="bg-coffee-beige text-coffee-teal px-6 py-2 font-sans text-xs uppercase tracking-widest">View
+                                Full Screen</span>
+                        </div>
+                    </div>
+                    <!-- Item 7 -->
+                    <div class="group relative aspect-square overflow-hidden cursor-pointer shadow-lg animate-fade-up lightbox-trigger"
+                        style="animation-delay: 0.7s;">
+                        <img src="images/gallery/gallery-7.jpg" alt="Custom brickwork and masonry renovation"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700 transform group-hover:scale-110"
+                            loading="lazy">
+                        <div
+                            class="absolute inset-0 bg-coffee-teal/0 group-hover:bg-coffee-teal/40 transition duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <span
+                                class="bg-coffee-beige text-coffee-teal px-6 py-2 font-sans text-xs uppercase tracking-widest">View
+                                Full Screen</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-20">
+                    <a href="contact.html"
+                        class="inline-block border border-coffee-teal text-coffee-teal px-10 py-4 font-sans text-sm tracking-widest uppercase hover:bg-coffee-teal hover:text-white transition duration-300">
+                        Start Your Project
+                    </a>
+                </div>
+            </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-coffee-dark text-coffee-beige py-20 px-6 border-t border-white/10">
+        <div class="max-w-desktop mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                <span class="font-serif text-2xl block mb-6">A&J RENOVATION</span>
+                <div class="flex gap-4 opacity-60">
+                    <a href="#" class="hover:text-white transition" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-12 font-sans font-light text-sm">
+                <div class="flex flex-col gap-3">
+                    <span class="font-medium mb-2 uppercase tracking-widest opacity-50">Menu</span>
+                    <a href="index.html" class="hover:underline">Home</a>
+                    <a href="about.html" class="hover:underline">About</a>
+                    <a href="services.html" class="hover:underline">Services</a>
+                    <a href="gallery.html" class="hover:underline">Gallery</a>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <span class="font-medium mb-2 uppercase tracking-widest opacity-50">Legal</span>
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                    <a href="#" class="hover:underline">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-desktop mx-auto mt-20 pt-8 border-t border-white/10 text-center md:text-left text-xs opacity-40 font-sans uppercase tracking-widest">
+            &copy; 2026 A&J Renovation Construction Ltd.
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="flex flex-col items-center justify-center relative">
+        <button id="lightbox-close"
+            class="absolute top-6 right-6 text-white text-3xl hover:text-coffee-beige transition z-50 bg-black/40 w-12 h-12 rounded-full flex items-center justify-center"
+            aria-label="Close">
+            <i class="fas fa-times"></i>
+        </button>
+        <button id="lightbox-prev"
+            class="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl hover:text-coffee-beige transition z-50 bg-black/40 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center pr-1"
+            aria-label="Previous">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Full Screen Image" class="z-40 relative">
+        <button id="lightbox-next"
+            class="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 text-white text-3xl md:text-4xl hover:text-coffee-beige transition z-50 bg-black/40 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center pl-1"
+            aria-label="Next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const triggers = document.querySelectorAll('.lightbox-trigger');
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+        const closeBtn = document.getElementById('lightbox-close');
+
+        let currentImageIndex = 0;
+        const images = [];
+
+        triggers.forEach((trigger, index) => {
+            const img = trigger.tagName === 'IMG' ? trigger : trigger.querySelector('img');
+            const src = img ? img.src : (trigger.dataset.img || '');
+            images.push(src);
+
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                currentImageIndex = index;
+                if (src) {
+                    lightboxImg.src = src;
+                    lightbox.classList.add('active');
+                }
+            });
+        });
+
+        const updateLightboxImage = () => {
+            if (images.length > 0) {
+                lightboxImg.src = images[currentImageIndex];
+            }
+        };
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateLightboxImage();
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateLightboxImage();
+        });
+
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target === lightboxImg) {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
