@@ -39,6 +39,7 @@
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
@@ -278,7 +279,7 @@
                         </div>
                     </div>
 
-                    <form class="bg-white p-10 shadow-xl rounded-sm border border-coffee-teal/5">
+                    <form id="contactForm" class="bg-white p-10 shadow-xl rounded-sm border border-coffee-teal/5">
                         <div class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="relative">
@@ -332,6 +333,10 @@
                                 <label
                                     class="absolute left-4 top-1 text-xs text-coffee-teal font-medium transition-all duration-300 pointer-events-none">Message</label>
                             </div>
+
+                            <!-- reCAPTCHA Widget -->
+                            <div class="g-recaptcha" data-sitekey="6LdNR4osAAAAAGI70XKSsn47cvmG05UvctFQD21s"></div>
+
                             <button
                                 class="btn-shimmer bg-coffee-teal text-white w-full py-5 uppercase text-sm tracking-widest hover:bg-coffee-dark transition duration-500 shadow-lg hover:shadow-coffee-teal/30 transform hover:-translate-y-1">Send
                                 Inquiry</button>
@@ -380,6 +385,27 @@
         document.getElementById('mobile-menu-btn').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
+
+        // reCAPTCHA validation logic
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                var recaptchaResponse = grecaptcha.getResponse();
+                
+                if (recaptchaResponse.length === 0) {
+                    event.preventDefault(); // Stop form submission
+                    alert('Please verify you are not a robot');
+                } else {
+                    // Logic when reCAPTCHA is checked
+                    if (typeof emailjs !== 'undefined') {
+                        // If emailjs exists, this logic will wrap it
+                        event.preventDefault();
+                        // This assumes the user adds emailjs.sendForm later
+                        // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)...
+                    }
+                }
+            });
+        }
     </script>
 </body>
 
