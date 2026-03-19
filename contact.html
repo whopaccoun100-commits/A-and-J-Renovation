@@ -283,14 +283,14 @@
                         <div class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="relative">
-                                    <input type="text" placeholder="Name"
+                                    <input type="text" placeholder="Name" name="name"
                                         class="floating-input w-full bg-coffee-beige/20 border-b border-coffee-teal/20 p-4 text-coffee-dark focus:outline-none focus:border-coffee-teal transition duration-300"
                                         required>
                                     <label
                                         class="absolute left-4 top-1 text-xs text-coffee-teal font-medium transition-all duration-300 pointer-events-none">Name</label>
                                 </div>
                                 <div class="relative">
-                                    <input type="email" placeholder="Email"
+                                    <input type="email" placeholder="Email" name="email"
                                         class="floating-input w-full bg-coffee-beige/20 border-b border-coffee-teal/20 p-4 text-coffee-dark focus:outline-none focus:border-coffee-teal transition duration-300"
                                         required>
                                     <label
@@ -299,7 +299,7 @@
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="relative">
-                                    <input type="tel" placeholder="Phone"
+                                    <input type="tel" placeholder="Phone" name="phone"
                                         class="floating-input w-full bg-coffee-beige/20 border-b border-coffee-teal/20 p-4 text-coffee-dark focus:outline-none focus:border-coffee-teal transition duration-300"
                                         required>
                                     <label
@@ -307,7 +307,7 @@
                                         Number</label>
                                 </div>
                                 <div class="relative">
-                                    <select
+                                    <select name="service"
                                         class="w-full bg-coffee-beige/20 border-b border-coffee-teal/20 p-4 text-coffee-dark focus:outline-none focus:border-coffee-teal transition duration-300 appearance-none cursor-pointer"
                                         required>
                                         <option value="" disabled selected>Select Service</option>
@@ -327,7 +327,7 @@
                                 </div>
                             </div>
                             <div class="relative">
-                                <textarea rows="5" placeholder="Message"
+                                <textarea rows="5" placeholder="Message" name="message"
                                     class="floating-input w-full bg-coffee-beige/20 border-b border-coffee-teal/20 p-4 text-coffee-dark focus:outline-none focus:border-coffee-teal transition duration-300"
                                     required></textarea>
                                 <label
@@ -385,25 +385,43 @@
         document.getElementById('mobile-menu-btn').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your Public Key
+        emailjs.init('DNHBl8-h-FIR_KPQO');
 
-        // reCAPTCHA validation logic
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
                 var recaptchaResponse = grecaptcha.getResponse();
                 
                 if (recaptchaResponse.length === 0) {
-                    event.preventDefault(); // Stop form submission
                     alert('Please verify you are not a robot');
-                } else {
-                    // Logic when reCAPTCHA is checked
-                    if (typeof emailjs !== 'undefined') {
-                        // If emailjs exists, this logic will wrap it
-                        event.preventDefault();
-                        // This assumes the user adds emailjs.sendForm later
-                        // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)...
-                    }
+                    return;
                 }
+                
+                const submitBtn = this.querySelector('button');
+                const originalBtnText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                // Send email using EmailJS sendForm helper to capture all named inputs and reCAPTCHA automatically
+                emailjs.sendForm('service_fjinpzo', 'template_9lvqozl', this)
+                    .then(function(response) {
+                        alert('Message sent successfully! We will get back to you soon.');
+                        contactForm.reset();
+                        grecaptcha.reset(); // Reset reCAPTCHA for the next submission
+                    }, function(error) {
+                        alert('Failed to send message. Please try again.');
+                        console.error('EmailJS error:', error);
+                    }).finally(function() {
+                        // Restore button state
+                        submitBtn.textContent = originalBtnText;
+                        submitBtn.disabled = false;
+                    });
             });
         }
     </script>
