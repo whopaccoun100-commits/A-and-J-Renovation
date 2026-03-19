@@ -388,8 +388,10 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        // Initialize EmailJS with your Public Key
-        emailjs.init('DNHBl8-h-FIR_KPQO');
+        // Initialize EmailJS with your Public Key using the v4 syntax
+        emailjs.init({
+            publicKey: 'DNHBl8-h-FIR_KPQO'
+        });
 
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
@@ -409,14 +411,16 @@
                 submitBtn.disabled = true;
                 
                 // Send email using EmailJS sendForm helper to capture all named inputs and reCAPTCHA automatically
-                emailjs.sendForm('service_fjinpzo', 'template_9lvqozl', this)
+                emailjs.sendForm('service_fjinpzo', 'template_9lvqozl', '#contactForm')
                     .then(function(response) {
                         alert('Message sent successfully! We will get back to you soon.');
                         contactForm.reset();
                         grecaptcha.reset(); // Reset reCAPTCHA for the next submission
                     }, function(error) {
-                        alert('Failed to send message. Please try again.');
-                        console.error('EmailJS error:', error);
+                        // Better error logging since EmailJS returns a specific text reason on 400 errors
+                        const errorMsg = error.text || error.message || 'Unknown error occurred.';
+                        alert('Failed to send message: ' + errorMsg);
+                        console.error('EmailJS error details:', error);
                     }).finally(function() {
                         // Restore button state
                         submitBtn.textContent = originalBtnText;
@@ -426,5 +430,4 @@
         }
     </script>
 </body>
-
 </html>
