@@ -225,7 +225,7 @@
                     class="w-full h-full object-cover opacity-10">
             </div>
             <div class="relative z-10 animate-fade-up">
-                <h1 class="font-serif text-6xl md:text-7xl mb-4 italic">Get in Touch</h1>
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl mb-4 italic">Get in Touch</h1>
                 <p class="font-sans text-sm uppercase tracking-[0.3em] opacity-80">Start Your Project Journey</p>
             </div>
         </header>
@@ -347,40 +347,80 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-coffee-dark text-coffee-beige py-20 px-6 border-t border-white/10">
-        <div class="max-w-desktop mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-            <div>
-                <span class="font-serif text-2xl block mb-6">A&J RENOVATION</span>
-                <div class="flex gap-4 opacity-60">
-                    <a href="#" class="hover:text-white transition" aria-label="Instagram"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="#" class="hover:text-white transition" aria-label="Facebook"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="hover:text-white transition" aria-label="LinkedIn"><i
-                            class="fab fa-linkedin-in"></i></a>
+    <footer class="bg-coffee-dark text-coffee-beige py-16 px-6 font-sans border-t border-white/10">
+        <div class="max-w-desktop mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+            <!-- Left: Branding -->
+            <div class="md:col-span-5 flex flex-col items-start text-left">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
+                    <!-- Logo -->
+                    <div class="h-12 w-12 rounded-full overflow-hidden bg-coffee-beige flex items-center justify-center shrink-0">
+                        <img src="images/logo/logo.jpg" alt="A&J Logo" class="w-full h-full object-cover mix-blend-multiply opacity-90">
+                    </div>
+                    <span class="font-serif text-xl sm:text-2xl tracking-wide leading-tight mt-2 sm:mt-0">A & J Renovation & Construction LTD</span>
                 </div>
+                <p class="text-coffee-beige/80 text-sm leading-relaxed mb-8 max-w-sm">
+                    Bespoke home renovations and construction across South Wales. A safe space for building your dream home, elevating your living, and thriving carefully.
+                </p>
+                <a href="contact.html" class="inline-block bg-coffee-teal text-coffee-beige px-8 py-3 rounded-full text-xs font-semibold uppercase tracking-widest hover:bg-coffee-beige hover:text-coffee-dark transition-all duration-300 shadow-lg hover:-translate-y-1">
+                    Book a Free Consultation
+                </a>
             </div>
-
-            <div class="grid grid-cols-2 gap-12 font-sans font-light text-sm">
-                <div class="flex flex-col gap-3">
-                    <span class="font-medium mb-2 uppercase tracking-widest opacity-50">Menu</span>
-                    <a href="index.html" class="hover:underline">Home</a>
-                    <a href="about.html" class="hover:underline">About</a>
-                    <a href="services.html" class="hover:underline">Services</a>
-                    <a href="gallery.html" class="hover:underline">Gallery</a>
+            
+            <!-- Right: Links -->
+            <div class="md:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-8 text-sm mt-6 md:mt-0">
+                <div class="flex flex-col gap-4 text-left">
+                    <span class="font-medium text-coffee-beige mb-2">Navigate</span>
+                    <a href="index.html" class="text-coffee-beige/60 hover:text-coffee-beige transition-colors duration-300">Home</a>
+                    <a href="about.html" class="text-coffee-beige/60 hover:text-coffee-beige transition-colors duration-300">About us</a>
+                    <a href="gallery.html" class="text-coffee-beige/60 hover:text-coffee-beige transition-colors duration-300">Gallery</a>
+                    <a href="contact.html" class="text-coffee-beige/60 hover:text-coffee-beige transition-colors duration-300">Contact</a>
                 </div>
-                <div class="flex flex-col gap-3">
-                    <span class="font-medium mb-2 uppercase tracking-widest opacity-50">Legal</span>
-                    <a href="#" class="hover:underline">Privacy Policy</a>
-                    <a href="#" class="hover:underline">Terms of Service</a>
+                <div class="flex flex-col gap-4 text-left">
+                    <span class="font-medium text-coffee-beige mb-2">Services</span>
+                    <a href="services.html" class="text-coffee-beige/60 hover:text-coffee-beige transition-colors duration-300">Bespoke Renovation</a>
+                    <a href="services.html" class="text-coffee-beige/60 hover:text-coffee-beige transition-colors duration-300">Extensions & Builds</a>
+                    <a href="services.html" class="text-coffee-beige/60 hover:text-coffee-beige transition-colors duration-300">Luxury Kitchens</a>
+                    <a href="services.html" class="text-coffee-beige/60 hover:text-coffee-beige transition-colors duration-300">Architectural Plans</a>
+                    <a href="services.html" class="text-white/60 hover:text-white transition-colors duration-300">Loft Conversions</a>
+                </div>
+                <div class="flex flex-col gap-4 text-left">
+                    <span class="font-medium text-coffee-beige mb-2">Contact us</span>
+                    <a href="mailto:a&jrenovations@gmail.com" class="text-coffee-beige/60 hover:text-coffee-beige transition-colors duration-300 break-words">hello@ajrenovations.co</a>
+                    <a href="tel:+441234567890" class="text-coffee-beige/60 hover:text-coffee-beige transition-colors duration-300">(+44) 1234-567-890</a>
+                </div>
+                <div class="flex flex-col gap-4 text-left">
+                    <span class="font-medium text-coffee-beige mb-2">Our office</span>
+                    <span class="text-coffee-beige/60 leading-relaxed">Swansea, SA17 BY<br>South Wales</span>
+                    <a href="https://maps.google.com" target="_blank" class="text-coffee-beige/90 underline hover:text-coffee-beige transition-colors duration-300 mt-1">Open Map</a>
                 </div>
             </div>
         </div>
-        <div
-            class="max-w-desktop mx-auto mt-20 pt-8 border-t border-white/10 text-center md:text-left text-xs opacity-40 font-sans uppercase tracking-widest">
-            &copy; 2026 A&J Renovation Construction Ltd.
+        
+        <!-- Giant Typography -->
+        <div class="max-w-desktop mx-auto border-b border-coffee-beige/20 pb-8 mb-8 overflow-hidden text-center flex justify-center w-full">
+            <h2 class="font-serif text-3xl md:text-5xl lg:text-6xl tracking-tighter leading-tight text-coffee-beige/90 font-light mt-8 md:mt-12 mb-4 uppercase whitespace-normal break-words w-full">
+                A & J Renovation & Construction LTD
+            </h2>
+        </div>
+        
+        <!-- Footer Bottom -->
+        <div class="max-w-desktop mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-coffee-beige/50">
+            <div class="text-center md:text-left">
+                &copy; 2026 A & J Renovation & Construction LTD. All rights reserved.
+            </div>
+            <div class="flex gap-6 text-coffee-beige/80">
+                <a href="https://www.facebook.com" class="hover:text-coffee-beige transition-transform duration-300 hover:scale-110" aria-label="Facebook"><i class="fab fa-facebook-square text-xl"></i></a>
+                <a href="https://www.instagram.com/ajrenovationconstruction?igsh=d24xNnd2N3BiaWkx" target="_blank" class="hover:text-coffee-beige transition-transform duration-300 hover:scale-110" aria-label="Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="https://twitter.com" class="hover:text-coffee-beige transition-transform duration-300 hover:scale-110" aria-label="X / Twitter"><i class="fab fa-square-x-twitter text-xl"></i></a>
+            </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/441234567890" target="_blank" aria-label="Chat with us on WhatsApp" 
+       class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:bg-green-600 hover:scale-110 transition-all duration-300 z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
     <script>
         document.getElementById('mobile-menu-btn').addEventListener('click', () => {
             document.getElementById('mobile-menu').classList.toggle('hidden');
